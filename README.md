@@ -13,7 +13,7 @@ These are some highlighting things about this app
   ## Due to time constraints these features weren't shipped or had some workaround
   
  - Using a demo payment gateway like Razor Pay requires extensive document verification therefore workaround here done was creating a demo payment simulation activity which returns the result.
- -  Firebase Cloud Messaging Service, I didn't really have enough server credits left to host my Spring Boot Firebase Admin Service therefore it didn't make its way.
- - Has limited product editing, images couldn't be edited after being uploaded once but product information could be edited.
+ -  Firebase Cloud Messaging Service, I didn't really had enough server credits left to host my Spring Boot Firebase Admin Service therefore it didn't make its way.
+ -  It has limited product editing, images couldn't be edited after being uploaded once but product information could be edited.
 
    
