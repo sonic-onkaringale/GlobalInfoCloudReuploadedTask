@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity()
             SharedPref.setdataBackground(applicationContext, "uid", "admin")
             SharedPref.setdataBackground(applicationContext, "name", "admin")
 
-            startActivity(Intent(this, AllProductsActivity::class.java))
+            startAct(Intent(this, AllProductsActivity::class.java))
         }
     }
 
