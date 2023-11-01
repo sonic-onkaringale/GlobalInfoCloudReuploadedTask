@@ -4,10 +4,11 @@ These are some highlighting things about this app
 
  - Supports Paging for viewing all products
  - Verifies address proof on the device using On Device ML KIT
- - Follows the Android's best practices 
+ - Follows the most Android's best practices 
  - Handles configuration changes(like screen rotation) in most screens
  - Has a good product viewing experience which consists of sliding images and full-screen images
  - Uses Glide Caching for images where repeated pings would conserve bandwidth
+ - Uploads Compressed Images on Cloud Storage
  
   ## Due to time constraints these features weren't shipped or had some workaround
   
