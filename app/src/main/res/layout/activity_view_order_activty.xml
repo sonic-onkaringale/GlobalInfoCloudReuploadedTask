@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.order.ViewOrderActivty">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextAppearance.Material3.HeadlineLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Order" />
+
+        <ProgressBar
+            android:id="@+id/progressBarCart"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/checkout_recycler"
+            android:layout_marginVertical="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/TotalPriceWholeCart"
+            style="@style/TextAppearance.Material3.HeadlineSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:text="Total" />
+
+
+        <TextView
+            android:layout_margin="4dp"
+            android:id="@+id/CustomerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CustomerName" />
+
+        <TextView
+            android:layout_margin="4dp"
+            android:id="@+id/ShippingAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shipping Address" />
+
+        <TextView
+            android:layout_margin="4dp"
+            android:id="@+id/CustomerContactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact Number" />
+
+        <TextView
+            android:layout_margin="4dp"
+            android:id="@+id/OrderPlacedOn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order Place" />
+        <TextView
+            android:layout_margin="4dp"
+            android:id="@+id/dateOfDelivery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date of delivery" />
+
+        <TextView
+            android:layout_margin="4dp"
+            android:id="@+id/OrderStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OrderStatus" />
+
+        <TextView
+            android:layout_margin="4dp"
+            android:id="@+id/RejectedReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RejectedReason" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_reasonToReject"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Reason To Reject " />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/approvalsLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/reject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Reject" />
+            <Button
+                android:id="@+id/accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Accept" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

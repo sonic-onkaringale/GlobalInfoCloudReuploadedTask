@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "506093909732",
+    "project_id": "shop-task-129c7",
+    "storage_bucket": "shop-task-129c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506093909732:android:d7789cbdaf46b764abdef1",
+        "android_client_info": {
+          "package_name": "com.onkaringale.shoptask"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwZD3i7RLJWkL0A7zoG70EkUfEWpxeEOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
