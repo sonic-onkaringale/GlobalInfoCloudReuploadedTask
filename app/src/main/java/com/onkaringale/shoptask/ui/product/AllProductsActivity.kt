@@ -84,7 +84,7 @@ class AllProductsActivity : AppCompatActivity()
 
 
         val productCollection = db.collection("/products")
-        val baseQuery: Query = productCollection.orderBy("createdTime", Query.Direction.ASCENDING)
+        val baseQuery: Query = productCollection.orderBy("createdTime", Query.Direction.DESCENDING)
         val config =
             PagingConfig( /* page size */20,  /* prefetchDistance */10,  /* enablePlaceHolders */
                           false)

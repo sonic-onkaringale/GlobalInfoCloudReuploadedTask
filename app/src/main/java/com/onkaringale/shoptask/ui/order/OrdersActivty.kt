@@ -53,7 +53,7 @@ class OrdersActivty : AppCompatActivity()
         val options: FirestorePagingOptions<Order> = if (SharedPref.getdata(this, "isadmin") == "1")
         {
             val baseQuery: Query =
-                ordersCollection.orderBy("placedOrderTime", Query.Direction.ASCENDING)
+                ordersCollection.orderBy("placedOrderTime", Query.Direction.DESCENDING)
             FirestorePagingOptions.Builder<Order>().setLifecycleOwner(this)
                 .setQuery(baseQuery, config, Order::class.java).build()
         }
@@ -182,18 +182,37 @@ class OrdersActivty : AppCompatActivity()
         {
             val pattern = "dd-MMM-yyyy"
             val simpleDateFormat = SimpleDateFormat(pattern, Locale.getDefault())
-            if (SharedPref.getdata(context, "isadmin") == "1") orderTitle.text =
-                order.products.size.toString() + " Orders by " + order.customerName
+            if (SharedPref.getdata(context, "isadmin") == "1")
+            {
+                val plurals = if (order.products.size>1)
+                    " items ordered by "
+                else
+                    " item ordered by "
+                orderTitle.text =
+                    order.products.size.toString() + plurals + order.customerName
+
+                orderDeliveryDate.text =
+                    "To be delivered on " + simpleDateFormat.format(order.deliveryDate.toDate())
+            }
             else
             {
+                orderDeliveryDate.text =
+                    "Arriving on " + simpleDateFormat.format(order.deliveryDate.toDate())
+
+                val plurals = if (order.products.size>1)
+                    " items ordered on "
+                else
+                    " item ordered on "
                 orderTitle.text =
-                    order.products.size.toString() + " Ordered on " + simpleDateFormat.format(order.placedOrderTime.toDate())
+                    order.products.size.toString() + plurals + simpleDateFormat.format(order.placedOrderTime.toDate())
+
+                orderDeliveryDate.text =
+                    "Arriving on " + simpleDateFormat.format(order.deliveryDate.toDate())
             }
 
 
 
-            orderDeliveryDate.text =
-                "Arriving on " + simpleDateFormat.format(order.deliveryDate.toDate())
+
 
             when (order.orderStatus)
             {

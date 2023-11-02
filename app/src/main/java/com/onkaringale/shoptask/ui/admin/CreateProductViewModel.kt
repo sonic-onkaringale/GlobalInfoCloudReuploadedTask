@@ -10,6 +10,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.android.gms.tasks.Tasks
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.storage.FirebaseStorage
@@ -106,7 +107,9 @@ class CreateProductViewModel(application: Application) : AndroidViewModel(applic
                                   productName,
                                   productDescription,
                                   price,
-                                  imageLinks.toList())
+                                  imageLinks.toList()
+                                 ,Timestamp.now()
+                                 )
             val documentTask = db.collection("products")
                 .document(product.productUid)
                 .set(product.toMap(), SetOptions.merge())
@@ -131,7 +134,8 @@ class CreateProductViewModel(application: Application) : AndroidViewModel(applic
                                   productName,
                                   productDescription,
                                   price,
-                                  imageURLs)
+                                  imageURLs
+                                 ,Timestamp.now())
             val documentTask = db.collection("products")
                 .document(product.productUid)
                 .update(product.toMap())

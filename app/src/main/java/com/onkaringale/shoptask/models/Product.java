@@ -23,11 +23,11 @@ public class Product {
     public Product() {
     }
 
-    public Product(String productUid, String productName, String productDescription, Double price, List<String> imageLinks) {
+    public Product(String productUid, String productName, String productDescription, Double price, List<String> imageLinks,Timestamp createdTime) {
         this.productUid = productUid;
         this.productName = productName;
         this.productDescription = productDescription;
-        this.createdTime = null;
+        this.createdTime = createdTime;
         this.price = price;
         this.imageLinks = imageLinks;
     }

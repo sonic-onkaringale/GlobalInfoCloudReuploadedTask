@@ -14,8 +14,17 @@
 
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+-keepattributes SourceFile,LineNumberTable
 
+
+-keep class com.google.gson.stream.** { *; }
+-keepnames class com.onkaringale.shoptask.models.** { *; }
+-keepclasseswithmembernames class com.onkaringale.shoptask.models.**
+-keepclassmembers class com.onkaringale.shoptask.models.* {
+    <fields>;
+    <init>();
+    <methods>;
+}
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
