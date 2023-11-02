@@ -46,10 +46,10 @@ class ViewOrderActivty : AppCompatActivity()
             binding.checkoutRecycler.layoutManager =
                 LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
             binding.checkoutRecycler.adapter = OrderAdapter(it, viewModel)
-            var paymentAmount = 1.0
+            var paymentAmount = 0.0
             for (i in it.indices)
             {
-                paymentAmount = it[i].first.price * it[i].second
+                paymentAmount += it[i].first.price * it[i].second
             }
             binding.TotalPriceWholeCart.text = "Total Payment : ₹" + paymentAmount
         }

@@ -90,10 +90,10 @@ class CartActivity : AppCompatActivity()
             binding.checkoutRecycler.layoutManager =
                 LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
             binding.checkoutRecycler.adapter = CartAdapter(it, viewModel)
-            var paymentAmount = 1.0 // Replace with the actual payment amount
+            var paymentAmount = 0.0 // Replace with the actual payment amount
             for (i in it.indices)
             {
-                paymentAmount = it[i].first.price * it[i].second
+                paymentAmount += it[i].first.price * it[i].second
             }
             binding.TotalPriceWholeCart.text="Total Payment : ₹"+paymentAmount
             binding.btnCheckout.setOnClickListener {view->
